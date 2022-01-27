@@ -1,0 +1,14 @@
+{
+  "name": "assignment-0-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "jest": "^27.4.7"
+  }
+}
