@@ -19,8 +19,11 @@ describe("index.html", () => {
 	it("sets charset to utf-8", () => {
 		expect(container.querySelector("meta[charset]")).not.toBeNull();
 		expect(
-			container.querySelector("meta[charset]").getAttribute("charset")
-		).toEqual("utf98");
+			container
+				.querySelector("meta[charset]")
+				.getAttribute("charset")
+				.toLowerCase()
+		).toEqual("utf-8");
 	});
 	it("sets a title in the head", () => {
 		expect(container.title).not.toEqual("");
