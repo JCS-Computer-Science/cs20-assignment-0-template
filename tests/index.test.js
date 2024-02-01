@@ -16,6 +16,13 @@ describe("index.html", () => {
 		await new Promise((resolve) => dom.window.addEventListener("load", resolve));
 		container = dom.window.document;
 	});
+	it("renders an html element", () => {
+		expect(container.querySelector("html")).not.toBeNull();
+	});
+	it("sets a title in the head", () => {
+		expect(container.title).not.toEqual("");
+		expect(container.querySelector("title").parentElement.tagName).toEqual("HEAD");
+	});
 	it("loads the p5.js library", () => {
 		expect(container.querySelector("script[src='p5.js']")).not.toBeNull();
 	});
@@ -24,13 +31,5 @@ describe("index.html", () => {
 	});
 	it("uses p5 to creates a canvas element", () => {
 		expect(container.querySelector("canvas")).not.toBeNull();
-	});
-
-	it("renders an html element", () => {
-		expect(container.querySelector("html")).not.toBeNull();
-	});
-	it("sets a title in the head", () => {
-		expect(container.title).not.toEqual("");
-		expect(container.querySelector("title").parentElement.tagName).toEqual("HEAD");
 	});
 });
